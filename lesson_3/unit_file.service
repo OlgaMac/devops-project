@@ -9,8 +9,8 @@ ExecStart=/opt/bin/java -jar /home/apps/webhooks/target/DigitalLibrary-0.0.1-SNA
 SuccessExitStatus=143
 Restart=on-failure
 RestartSec=10
-StandartOutput=syslog
-StandartError=syslog
+StandardOutput=syslog
+StandardError=syslog
 SyslogIdentifier=webbooks
 [Install]
 WantedBy=multi-user.target
