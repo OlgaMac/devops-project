@@ -1,0 +1,16 @@
+[Unit]
+Description=Webbook API
+After=syslog.target
+[Service]
+Type=simple
+User=olga
+WorkingDirectory=/home
+ExecStart=/opt/bin/java -jar /home/apps/webhooks/target/DigitalLibrary-0.0.1-SNAPSHOT.jar
+SuccessExitStatus=143
+Restart=on-failure
+RestartSec=10
+StandartOutput=syslog
+StandartError=syslog
+SyslogIdentifier=webbooks
+[Install]
+WantedBy=multi-user.target
