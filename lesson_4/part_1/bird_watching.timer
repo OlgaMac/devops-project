@@ -1,8 +1,0 @@
-[Unit]
-Description=Activate bird_watching.service every minute
-
-[Timer]
-OnUnitInactiveSec=1m
-
-[Install]
-WantedBy=timers.target
