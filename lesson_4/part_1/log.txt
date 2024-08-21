@@ -1,0 +1,11 @@
+sudo tail -f /var/log/bird_watching.log
+Aug 18 21:39:46 DevOps bird_watching[11802]: birds fly
+Aug 18 21:40:48 DevOps bird_watching[11815]: birds fly
+Aug 18 21:41:53 DevOps bird_watching[11823]: birds fly
+Aug 18 21:42:55 DevOps bird_watching[11832]: birds fly
+Aug 18 21:43:56 DevOps bird_watching[11841]: birds fly
+Aug 18 21:44:57 DevOps bird_watching[11851]: birds fly
+Aug 18 21:45:58 DevOps bird_watching[11863]: birds fly
+Aug 18 21:47:01 DevOps bird_watching[11871]: birds fly
+Aug 18 21:48:02 DevOps bird_watching[11879]: birds fly
+Aug 18 21:49:04 DevOps bird_watching[11889]: birds fly
