@@ -1,0 +1,11 @@
+[Unit]
+Description=Bird watching service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/cat /etc/systemd/system/bird_watcher.txt
+StandardOutput=file:/var/log/bird_watching.log
+StandardError=file:/var/log/bird_watching.log
+SyslogIdentifier=bird_watching
+[Install]
+WantedBy=multi-user.target
