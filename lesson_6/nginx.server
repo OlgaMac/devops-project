@@ -1,0 +1,11 @@
+server {
+listen 443;
+server_name webbooksolga.org  www.webbooksolga.org;
+ssl on;
+ssl_certificate /etc/ssl/certs/webbooks.crt;
+ssl_certificate_key /etc/ssl/private/webbooks.key;
+ssl_session_timeout 5m;
+location / {
+try_files $uri $uri/ =404;
+}
+}
