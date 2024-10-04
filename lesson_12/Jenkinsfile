@@ -1,4 +1,4 @@
-pipeline {
+ipeline {
     agent any
 
     tools {
@@ -33,23 +33,29 @@ pipeline {
 
         stage('Upload') {
             when {
-                 expression { env.GIT_BRANCH == "origin/master" }
+                 expression { BRANCH_NAME == "master" }
                   }
 
             steps {
                 dir('webbooks') {
                     sh "mvn -DskipTests -s settings.xml -Dmaven.repo.local=${MAVEN_REPO_PATH} -Dversion.application=${env.VERSION} deploy"
                 }
+
+                build wait: false, propagate: false,
+                                                job: 'ci-deploy-run',
+                                                parameters: [
+                                                    string(name: 'ARTIFACT', value: 'target/*.jar')
+                                                ]
             }
         }
     }
 
     post {
-        success {
-            dir('webbooks') {
-                junit 'target/surefire-reports/*.xml'
-                archiveArtifacts 'target/*.jar'
+            success {
+                dir('webbooks') {
+                    junit 'target/surefire-reports/*.xml'
+                    archiveArtifacts 'target/*.jar'
+                }
             }
         }
     }
-}
